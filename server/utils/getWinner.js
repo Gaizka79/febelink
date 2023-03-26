@@ -20,4 +20,4 @@ const getWinner = ( player, computer, playerName ) => {
     }
 }
 
-module.exports = { getWinner };
+module.exports = getWinner;
