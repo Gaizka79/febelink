@@ -1,17 +1,16 @@
 import '../styles/header.css';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 
 import { userContext } from '../context/userContext';
 
-
 function Header () {
 
-    const [ values, setValues ] = useState(null);
     const { user, setUser } = useContext(userContext);
+    let userName;
 
     const handleChange = event => {
         event.preventDefault();
-        setValues(event.target.value);
+        userName = event.target.value;
     }
 
     const handleLogout = () => {
@@ -20,14 +19,14 @@ function Header () {
 
     const handleSubmit = event => {
         event.preventDefault();
-        setUser(values)
+        setUser(userName)
     }
 
     return (
         <header>
             { user ?
             <>
-                <p>Bienvenido {user}</p>
+                <p>Bienvenid@ {user}</p>
                 <input type="button" id='logout' onClick={handleLogout} value="Logout" className='button'/>
             </> :
             <form onSubmit={handleSubmit} className="form">
