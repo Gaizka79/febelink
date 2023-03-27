@@ -10,6 +10,7 @@ const saveData = data => {
 const reset = () => {
     savedData = [];
     console.log("Partida reiniciada");
+    return { "message": "Reset OK!"}
 }
 
 module.exports = { saveData, reset };

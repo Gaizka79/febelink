@@ -12,4 +12,4 @@ const getTirada = tirada => {
     }
 };
 
-module.exports = getTirada;
+module.exports = {getTirada};

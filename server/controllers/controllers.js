@@ -27,8 +27,8 @@ const ranking =  (req, res) => {
 }
 
 const reiniciar = (req, res) => {
-    reset();
-    res.status(200).json({ message: "Ok"})
+    const message = reset();
+    res.status(200).json(message)
 }
 
 const controllers = {
