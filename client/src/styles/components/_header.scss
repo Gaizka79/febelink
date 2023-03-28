@@ -1,0 +1,24 @@
+
+header {
+    font-size: 1.25em;
+
+    
+
+    
+        
+    
+
+}
+.login {
+    height: 25vh;
+    color: white;
+    font-size: 1.25em;
+
+    @include background-image('../../assets/piedrapapeltijera.jpeg');
+    background-repeat: repeat;
+    background-size: contain;
+    background-size: auto 100%;
+
+    & #name { font-size: 1.25em };
+    & .form { padding-top: 1em };
+};
