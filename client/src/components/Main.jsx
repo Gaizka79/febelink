@@ -1,11 +1,14 @@
-import '../styles/main.css';
-
 import axios from 'axios';
 
 import { useContext, useEffect, useState } from 'react';
 import { userContext } from '../context/userContext';
 
 import Ranking from './Ranking.jsx';
+
+import piedra from '../assets/piedra.png';
+import papel from '../assets/papel.png';
+import tijeras from '../assets/tijeras.png';
+
 //import { response } from 'express';
 
 function Main () {
@@ -53,15 +56,31 @@ function Main () {
         }
     }
 
+    const getIcono = icono => {
+        switch (icono) {
+            case "piedra":
+                return piedra
+            case "papel":
+                return papel
+            case "tijera":
+                return tijeras
+            default:
+                console.error("Error inesperado!");
+                break;
+        }
+    }
+
     return (
         <main> 
             { (user && ronda) ? 
-            <>
-                <button className='button' onClick={handleTirar}>Jugar</button>
+            <div className='ronda'>
                 <p>{user}: {ronda[user]}</p>
+                <img src={getIcono(ronda[user])} alt="piedra" className='icono' />
                 <p>Computer: {ronda.computer}</p>
+                <img src={getIcono(ronda.computer)} alt="piedra" className='icono' />
                 <p>El ganador es: {ronda.winner}</p>
-            </> : user ?
+                <button className='button' onClick={handleTirar}>Jugar</button>
+            </div> : user ?
             <>
                 <button className='button' onClick={handleTirar}>Jugar</button>
             </> :
@@ -69,8 +88,9 @@ function Main () {
             }
             <article className='ranking' >
                 <Ranking ranking={ranking}/>
+                <button className='button' onClick={handleReiniciar}>Reiniciar</button>
             </article>
-            <button className='handleReiniciar' onClick={handleReiniciar}>Reiniciar</button>
+            
         </main> 
         
     )

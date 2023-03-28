@@ -1,0 +1,36 @@
+main {
+    background-color: blueviolet;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.ronda {
+    background-color:darkblue;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50%;
+    max-height: 50%;
+}
+
+.lista {
+    display: flex;
+    flex-direction: column;
+}
+
+.ranking {
+    background-color: blue;
+    color: white;
+
+    width: 60%;
+    height: 50%;
+    max-height: 50%;
+}
+
+.icono {
+    width: 5em;
+    height: 5em;
+    margin: auto;
+}

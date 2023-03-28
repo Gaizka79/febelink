@@ -1,9 +1,7 @@
-import '../styles/footer.css';
-
 function Footer () {
     return (
         <footer>
-            <p>Developed by Gaizka</p>
+            <b>Developed by Gaizka</b>
         </footer>
     )
 }

@@ -1,4 +1,3 @@
-import '../styles/header.css';
 import { useContext } from 'react';
 
 import { userContext } from '../context/userContext';
@@ -23,16 +22,15 @@ function Header () {
     }
 
     return (
-        <header>
+        <header className='login'>
             { user ?
             <>
                 <p>Bienvenid@ {user}</p>
                 <input type="button" id='logout' onClick={handleLogout} value="Logout" className='button'/>
             </> :
             <form onSubmit={handleSubmit} className="form">
-                <label htmlFor="name">Nombre:</label>
                 <input type="text" id='name' placeholder='Nombre...' onChange={handleChange} />
-                <input type="submit" className='button' />
+                <input type="submit" className='button' value="Login" />
             </form>
             }
         </header>
